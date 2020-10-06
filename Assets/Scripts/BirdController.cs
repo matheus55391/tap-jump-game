@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class BirdController : MonoBehaviour
 {
     [SerializeField]
+    private ScoreCanvas score;
+    [SerializeField]
     private GameObject gameMenu;
     [SerializeField]
     private float jumpforce = 10f;
@@ -33,6 +35,7 @@ public class BirdController : MonoBehaviour
             //on press space will jump
             //Debug.Log("SPACE");
             rb.velocity = Vector2.up * jumpforce;
+            this.gameObject.GetComponent<Animator>().Play("jump");
         }
     }
     
@@ -41,6 +44,7 @@ public class BirdController : MonoBehaviour
         if(collision.gameObject.tag == "die"){
             Time.timeScale = 0; 
             gameMenu.SetActive(true);
+            score.check_record();
         }
 
     }   
