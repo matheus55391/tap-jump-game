@@ -9,7 +9,7 @@ public class Cano : MonoBehaviour
     void Start()
     {
         
-        transform.position = new Vector3(transform.position.x,Random.RandomRange(-3.3f, 3.3f),transform.position.z);
+        transform.position = new Vector3(transform.position.x,Random.Range(-3.3f, 3.3f),transform.position.z);
     }
 
     // Update is called once per frame
